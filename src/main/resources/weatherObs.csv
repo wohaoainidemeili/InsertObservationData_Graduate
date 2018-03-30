@@ -1,0 +1,8 @@
+urn:ogc:def:property:OGC:1.0:evapotranspiration,0
+urn:ogc:def:property:OGC:1.0:groundTemperature,1
+urn:ogc:def:property:OGC:1.0:precipitation,2
+urn:ogc:def:property:OGC:1.0:airPressure,3
+urn:ogc:def:property:OGC:1.0:relativeHumidity,4
+urn:ogc:def:property:OGC:1.0:sunTime,5
+urn:ogc:def:property:OGC:1.0:airTemperature,6
+urn:ogc:def:property:OGC:1.0:windSpeed,7

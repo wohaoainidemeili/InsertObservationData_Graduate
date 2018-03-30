@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.n52.sensorweb:52n-oxf-swes-v20:2.0.0-alpha.3.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/n52/sensorweb/52n-oxf-swes-v20/2.0.0-alpha.3.2/52n-oxf-swes-v20-2.0.0-alpha.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/n52/sensorweb/52n-oxf-swes-v20/2.0.0-alpha.3.2/52n-oxf-swes-v20-2.0.0-alpha.3.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/n52/sensorweb/52n-oxf-swes-v20/2.0.0-alpha.3.2/52n-oxf-swes-v20-2.0.0-alpha.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
