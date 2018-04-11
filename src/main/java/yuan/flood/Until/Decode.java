@@ -166,20 +166,37 @@ public class Decode {
 
         IoComponentPropertyType[] properties =staSystem.getOutputs().getOutputList().getOutputArray();
         List<ObservedProperty> observedProperties=new ArrayList<ObservedProperty>();
-        for (IoComponentPropertyType property:properties){
-            ObservedProperty obsProperty=new ObservedProperty();
+        for (IoComponentPropertyType property:properties) {
+            ObservedProperty obsProperty = new ObservedProperty();
             //get the property name
-            String propertyName= property.getName();
-            //get the property ID
-            String propertyID=property.getQuantity().getDefinition();
+            String propertyName = property.getName();
+            String propertyID = null;
+            //get the type of obs
+            String typeOfProperty = null;
+            //if the property value is type of double\
+            if (property.isSetQuantity()) {
+                typeOfProperty = "Quantity";
+                propertyID = property.getQuantity().getDefinition();
+                String propertyUnit = property.getQuantity().getUom().getCode();
+                obsProperty.setUnit(propertyUnit);
+            }
+            //if the property value is type of string
+            else if (property.isSetText()) {
+                typeOfProperty = "Text";
+                propertyID = property.getText().getDefinition();
+            }
+            //if the property value is type of wkt like pooint(0,0)
+            else if (property.isSetAbstractDataRecord()) {
+                typeOfProperty = "Position";
+                propertyID = property.getAbstractDataRecord().getDefinition();
+            }
             //get property unit
-            String propertyUnit=property.getQuantity().getUom().getCode();
             obsProperty.setPropertyID(propertyID);
             obsProperty.setPropertyName(propertyName);
-            obsProperty.setUnit(propertyUnit);
+            obsProperty.setTypeOfProperty(typeOfProperty);
             observedProperties.add(obsProperty);
-            sensor.setObservedProperties(observedProperties);
         }
+        sensor.setObservedProperties(observedProperties);
 
         return sensor;
     }

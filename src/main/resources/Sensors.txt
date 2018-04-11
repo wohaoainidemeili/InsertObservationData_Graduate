@@ -1,0 +1,2 @@
+urn:liesmars:insitusensor:hydrological:hanchuan
+urn:liesmars:insitusensor:hydrological:shayang

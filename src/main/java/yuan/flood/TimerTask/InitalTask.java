@@ -59,7 +59,7 @@ public class InitalTask {
         }
         obsFileReader.close();
         //读取文件名称和属性名称
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(sensorFileName)));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(sensorFileName),"utf-8"));
         while ((bufferLine = bufferedReader.readLine()) != null) {
             //获取每一个传感器的信息
             InsertParams insertParams = new InsertParams();
@@ -88,6 +88,7 @@ public class InitalTask {
                 for (int i=0;i<dataEles.length;i++ ) {
                     data[currentLine][i] = Double.valueOf(dataEles[i]);
                 }
+                currentLine++;
             }
             dataBufferReader1.close();
             //解析传感器参数信息

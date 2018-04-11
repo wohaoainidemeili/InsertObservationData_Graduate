@@ -13,7 +13,7 @@ import java.net.URL;
 public class FeederSensor {
     public static void main(String[] args) throws IOException, SOAPException, InterruptedException {
         //addSOS in Feeder
-        //setLoadSOS("http://localhost:8080/SOS/sos");
+//        setLoadSOS("http://localhost:8080/SOS/sos");
         Thread.sleep(10000);
         //set sensors enable
         BufferedReader sensorReader=new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("Sensors.txt")));

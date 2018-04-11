@@ -23,6 +23,7 @@ public class InsertObservationThread implements Runnable {
     }
     @Override
     public void run() {
+        System.out.println(Thread.currentThread().getName() + "," + Count);
         double[][] data = insertParams.getSensorData();
         Map<String, Integer> linkedData = insertParams.getLinkedDataMap();
         Sensor sensor = insertParams.getSensor();
@@ -40,9 +41,10 @@ public class InsertObservationThread implements Runnable {
         String t= simpleDateFormat.format(new Date());
         String timeStr= t.replace("+0800", "+08:00");
         SOSWrapper sosWrapper = new SOSWrapper(sensorID, timeStr, lon, lat, sos, sensor.getObservedProperties());
+        sosWrapper.setSrid(4326);
         String insertXML = Encode.getInserObservationXML(sosWrapper);
         String responseXML = HttpRequestAndPost.sendPost(sos, insertXML);
-        log.info(responseXML);
+        System.out.println(timeStr+","+responseXML);
         Count++;
 
     }
